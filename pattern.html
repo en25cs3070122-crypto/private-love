@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pattern Lock</title>
+  <style>
+    body { text-align:center; font-family:Arial; margin-top:40px; }
+    .grid { display:grid; grid-template-columns:repeat(3,80px); gap:15px; justify-content:center; }
+    .dot {
+      width:80px; height:80px; border-radius:50%;
+      background:#ddd; font-size:24px; line-height:80px; cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Draw Pattern</h2>
+
+<div class="grid">
+  <div class="dot" onclick="tap(1)">1</div>
+  <div class="dot" onclick="tap(2)">2</div>
+  <div class="dot" onclick="tap(3)">3</div>
+  <div class="dot" onclick="tap(4)">4</div>
+  <div class="dot" onclick="tap(5)">5</div>
+  <div class="dot" onclick="tap(6)">6</div>
+  <div class="dot" onclick="tap(7)">7</div>
+  <div class="dot" onclick="tap(8)">8</div>
+  <div class="dot" onclick="tap(9)">9</div>
+</div>
+
+<br>
+<div class="dot" style="margin:auto" onclick="tap(0)">0</div>
+
+<script>
+  let input = "";
+  const correct = "14062007";
+  function tap(n) {
+    input += n;
+    if (input.length === correct.length) {
+      if (input === correct) {
+        window.location.href = "love.html";
+      } else {
+        alert("Wrong Pattern");
+        input = "";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
